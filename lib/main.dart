@@ -46,7 +46,7 @@ class _QuizPageState extends State<QuizPage> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        Expanded(
+        const Expanded(
           flex: 5,
           child: Padding(
             padding: EdgeInsets.all(10.0),
@@ -77,7 +77,14 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                //The user picked true.
+                setState(() {
+                  scoreKeeper.add(
+                    const Icon(
+                      Icons.check,
+                      color: Colors.green,
+                    ),
+                  );
+                }); //The user picked true.
               },
             ),
           ),
